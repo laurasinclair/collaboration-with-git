@@ -7,7 +7,7 @@ function App() {
 	return (
 		isLoading ? <Spinner /> : (
 			<div className={"App " + theme}>
-				Hello there
+				<p>Hello there</p>
 			</div>
 		)
 	);
