@@ -25,7 +25,6 @@ body
 .App
 	margin: 0
 	padding: 20px
-	font-family: sans-serif
 	text-align: center
 	min-height: 100vh
 	display: flex
@@ -33,74 +32,35 @@ body
 	align-items: center
 	justify-content: center
 
-.Counter
-	max-width: 500px
-	width: 100%
-	margin: 40px auto
-	padding: 20px
-	color: #3a2081
-	border-radius: 5px
-
 button,
 select
 	border: 0
 
-a
-	font-weight: 500
-	color: #535bf2
-	text-decoration: inherit
-	&:hover
-		color: #535bf2
-
-h1
-	font-size: 3.2em
-	line-height: 1.1
+.theme
+	&_light
+		background: $color-light
+		color: $color-dark
+		button
+			color: $color-dark
+			border-color: $color-dark
+	&_dark
+		background: $color-dark
+		color: $color-light
+		button
+			color: $color-light
+			border-color: $color-light
 
 button
 	border-radius: 0
 	border: 3px solid
+	margin: 4px
 	padding: 0.6em 1.2em
 	font-size: 1em
 	font-weight: 800
 	font-family: inherit
 	background-color: transparent
 	cursor: pointer
-	transition: border-color 0.25s
-	margin: 4px
+	transition: all 0.25s
 	&:focus,
 	&:focus-visible
 		outline: none
-	
-input, select
-	padding: 10px 16px
-	border-radius: 7px
-	font-size: 1rem
-
-
-.theme
-	&_light
-		background: $color-light
-		color: $color-dark
-		input, select
-			background: $color-light
-			color: #3a2081
-			border: 2px solid #3a20815e
-		button
-			color: $color-dark
-			border-color: $color-dark
-		.Counter
-			background: #ccc3d6
-	&_dark
-		background: $color-dark
-		color: $color-light
-		border: 2px solid #3a20815e
-		input, select
-			background: $color-light
-			color: white
-			border: 2px solid white
-		.Counter
-			background: #1c1b1c
-			color: white
-		button
-			color: $color-light
-			border-color: $color-light
