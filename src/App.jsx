@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import NavBar from "./components/NavBar";
 
 function App() {
 	const themes = {
@@ -16,12 +17,15 @@ function App() {
 	return isLoading ? (
 		<Spinner />
 	) : (
-		<div className={"App " + themes[currentTheme]}>
-			<p>Hello there</p>
-			<button onClick={toggleTheme}>
-				{currentTheme === "light" ? "Dark" : "Light"} theme
-			</button>
-		</div>
+		<>
+			<NavBar />
+			<div className={"App " + themes[currentTheme]}>
+				<p>Hello there</p>
+				<button onClick={toggleTheme}>
+					{currentTheme === "light" ? "Dark" : "Light"} theme
+				</button>
+			</div>
+		</>
 	);
 }
 
