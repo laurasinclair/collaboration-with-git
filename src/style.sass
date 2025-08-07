@@ -43,12 +43,16 @@ select
 		button
 			color: $color-dark
 			border-color: $color-dark
+			&:hover
+				box-shadow: 4px 4px 0 $color-dark
 	&_dark
 		background: $color-dark
 		color: $color-light
 		button
 			color: $color-light
 			border-color: $color-light
+			&:hover
+				box-shadow: 4px 4px 0 $color-light
 
 button
 	border-radius: 0
@@ -61,6 +65,9 @@ button
 	background-color: transparent
 	cursor: pointer
 	transition: all 0.25s
+	&:hover
+		transform: translate(-4px, -4px)
+		box-shadow: 4px 4px 0 $color-dark
 	&:focus,
 	&:focus-visible
 		outline: none
