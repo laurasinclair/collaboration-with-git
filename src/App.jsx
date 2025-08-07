@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import Info from "./components/Info";
 
 function App() {
 	const themes = {
@@ -21,6 +22,8 @@ function App() {
 			<button onClick={toggleTheme}>
 				{currentTheme === "light" ? "Dark" : "Light"} theme
 			</button>
+
+			<Info />
 		</div>
 	);
 }
