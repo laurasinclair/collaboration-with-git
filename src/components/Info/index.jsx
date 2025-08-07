@@ -37,10 +37,21 @@ const SVGInfo = (props) => {
 	);
 }
 
-export default function Info() {
+export default function Info({ isVisible }) {
+	const [_, setIsVisible] = isVisible;
+	const toggleInfo = () => setIsVisible((prev) => !prev);
+
 	return (
-		<div className={styles.info}>
+		<div className={styles.info} onClick={toggleInfo}>
 			<SVGInfo className={styles.svg} />
+		</div>
+	);
+}
+
+export function InfoBox({children}) {
+	return (
+		<div className={styles.infoBox}>
+			{children}
 		</div>
 	);
 }

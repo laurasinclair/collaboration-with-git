@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import Info from "./components/Info";
+import Info, { InfoBox } from "./components/Info";
 
 function App() {
 	const themes = {
@@ -8,22 +8,25 @@ function App() {
 	};
 
 	const [currentTheme, setCurrentTheme] = useState("light");
-	const [isLoading, setIsLoading] = useState(false);
+	const [isLoading] = useState(false);
 
 	const toggleTheme = () => {
 		setCurrentTheme((prev) => (prev === "light" ? "dark" : "light"));
 	};
 
+	const [isVisible, setIsVisible] = useState(false);
+
 	return isLoading ? (
 		<Spinner />
 	) : (
 		<div className={"App " + themes[currentTheme]}>
+			<Info isVisible={[isVisible, setIsVisible]} />
+
+			{isVisible && <InfoBox></InfoBox>}
 			<p>Hello there</p>
 			<button onClick={toggleTheme}>
 				{currentTheme === "light" ? "Dark" : "Light"} theme
 			</button>
-
-			<Info />
 		</div>
 	);
 }
