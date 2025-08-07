@@ -1,15 +1,27 @@
 import React, { useState } from "react";
 
 function App() {
-	const [theme, setTheme] = useState("theme_light");
+	const themes = {
+		light: "theme_light",
+		dark: "theme_dark",
+	};
+
+	const [currentTheme, setCurrentTheme] = useState("light");
 	const [isLoading, setIsLoading] = useState(false);
 
-	return (
-		isLoading ? <Spinner /> : (
-			<div className={"App " + theme}>
-				<p>Hello there</p>
-			</div>
-		)
+	const toggleTheme = () => {
+		setCurrentTheme((prev) => (prev === "light" ? "dark" : "light"));
+	};
+
+	return isLoading ? (
+		<Spinner />
+	) : (
+		<div className={"App " + themes[currentTheme]}>
+			<p>Hello there</p>
+			<button onClick={toggleTheme}>
+				{currentTheme === "light" ? "Dark" : "Light"} theme
+			</button>
+		</div>
 	);
 }
 
