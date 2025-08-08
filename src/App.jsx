@@ -14,6 +14,8 @@ function App() {
 		setCurrentTheme((prev) => (prev === "light" ? "dark" : "light"));
 	};
 
+	const hello = "hello"
+	
 	const [isVisible, setIsVisible] = useState(false);
 
 	return isLoading ? (
