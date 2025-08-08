@@ -14,7 +14,7 @@ function App() {
 		setCurrentTheme((prev) => (prev === "light" ? "dark" : "light"));
 	};
 
-	const hello = "hello"
+	const hello = "hello world"
 	
 	const [isVisible, setIsVisible] = useState(false);
 
