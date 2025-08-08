@@ -15,7 +15,7 @@ function App() {
 		setCurrentTheme((prev) => (prev === "light" ? "dark" : "light"));
 	};
 
-	const hello = "hello"
+	const hello = "hello pizza"
 	
 	const [isVisible, setIsVisible] = useState(false);
 
